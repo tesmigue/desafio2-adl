@@ -6,6 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnFilterAll"
+            android:text="All"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnFilterPending"
+            android:text="Pending"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnFilterDone"
+            android:text="Done"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <EditText
         android:id="@+id/etTask"
         android:hint="Enter new task"
@@ -14,16 +44,17 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#1565C0"
         android:textColor="#000"
-        android:textColorHint="#1565C0" />
+        android:textColorHint="#1565C0"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btnAdd"
         android:text="Add Task"
-        android:layout_marginTop="8dp"
         android:backgroundTint="#1565C0"
         android:textColor="#FFF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
 
     <TextView
         android:id="@+id/tvCounter"

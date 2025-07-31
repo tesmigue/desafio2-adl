@@ -30,6 +30,12 @@ class TasksAdapter(
         notifyItemRemoved(position)
     }
 
+    fun updateList(newTasks: MutableList<Task>) {
+        tasks.clear()
+        tasks.addAll(newTasks)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_tarea, parent, false)
         return TaskViewHolder(view)
@@ -47,6 +53,7 @@ class TasksAdapter(
         private val btnDelete: ImageButton = view.findViewById(R.id.btnDelete)
 
         fun bind(task: Task) {
+            cbTitle.setOnCheckedChangeListener(null)
             cbTitle.text = task.title
             cbTitle.isChecked = task.isDone
 
