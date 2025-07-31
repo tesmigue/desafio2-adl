@@ -9,6 +9,8 @@ import com.tesmigue.todolist.adapter.TasksAdapter
 import com.tesmigue.todolist.databinding.ActivityMainBinding
 import com.tesmigue.todolist.model.Task
 import com.tesmigue.todolist.utils.SwipeToDeleteCallback
+import android.text.Editable
+import android.text.TextWatcher
 
 class MainActivity : AppCompatActivity() {
 
@@ -78,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updatePendingCount() {
-        val count = taskList.count { !it.completed }
+        val count = taskList.count { !it.isDone }
         binding.tvCounter.text = "Pending tasks: $count"
     }
 }

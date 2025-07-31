@@ -31,7 +31,7 @@ class TasksAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_tarea, parent, false)
         return TaskViewHolder(view)
     }
 
@@ -48,14 +48,14 @@ class TasksAdapter(
 
         fun bind(task: Task) {
             cbTitle.text = task.title
-            cbTitle.isChecked = task.completed
+            cbTitle.isChecked = task.isDone
 
-            val date = Date(task.createdAt)
+            val date = Date(task.creationDate)
             val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
             tvDate.text = formatter.format(date)
 
             cbTitle.setOnCheckedChangeListener { _, isChecked ->
-                task.completed = isChecked
+                task.isDone = isChecked
                 onCheckChanged()
             }
 
